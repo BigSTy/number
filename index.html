@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Checker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #FF5722;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #E64A19;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .error {
+            color: #FF5722;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Введіть число</h1>
+        <input type="text" id="numberInput" placeholder="Введіть число">
+        <button onclick="checkNumber()">Перевірити</button>
+        <div id="result">
+            <img id="image" src="result.png" alt="Зображення">
+            <p id="error" class="error"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkNumber() {
+            const input = document.getElementById('numberInput').value;
+            const image = document.getElementById('image');
+            const error = document.getElementById('error');
+
+            if (input === '323') {
+                image.style.display = 'block';
+                error.textContent = '';
+            } else {
+                image.style.display = 'none';
+                error.textContent = 'Помилка: введено невірне число';
+            }
+        }
+    </script>
+</body>
+</html>
